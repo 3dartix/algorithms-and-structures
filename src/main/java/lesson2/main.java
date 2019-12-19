@@ -1,10 +1,11 @@
 package lesson2;
 
+import java.util.Comparator;
 import java.util.Random;
 
 public class main {
     private static Random RANDOM = new Random();
-    private static final int LENGTH = 10000;
+    private static final int LENGTH = 100000;
 
 
     public static void main(String[] args) {
@@ -24,5 +25,20 @@ public class main {
         }
         System.out.println("Мой массив длиной " + myArr.getSize() + " заполнялся за: " + (System.currentTimeMillis() - a) + " ms.");
 
+        a = System.currentTimeMillis();
+        myArr.bubbleSort(Comparator.naturalOrder());
+        System.out.println("Массив размером " + myArr.getSize() + " методом пузырька элементов сортируется за: " + (System.currentTimeMillis() - a) + " ms.");
+
+//        a = System.currentTimeMillis();
+//        myArr.selectionSort();
+//        System.out.println("Массив размером " + myArr.getSize() + " сортируется методом вставки за: " + (System.currentTimeMillis() - a) + " ms.");
+
+//        a = System.currentTimeMillis();
+//        myArr.insertionSort();
+//        System.out.println("Массив размером " + myArr.getSize() + " сортируется методом вставки за: " + (System.currentTimeMillis() - a) + " ms.");
+
+
+
+        //System.out.println(myArr);
     }
 }
